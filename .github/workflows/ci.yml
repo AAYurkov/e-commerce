@@ -1,7 +1,11 @@
-stages:
-  - hello
+name: Hello World Workflow
 
-hello_world:
-  stage: hello
-  script:
-    - echo "Hello, World"
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World"
